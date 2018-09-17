@@ -8,23 +8,46 @@ setTimeout(function(){
     siteWlecome.classList.remove('active')
 },1000)
 
-window.onscroll = function(a){
+window.onscroll = function(x){
     if(window.scrollY>0){
         topNavBar.classList.add('sticky')
     }
     else{
         topNavBar.classList.remove('sticky')
     }
-}
-let liTags = document.querySelectorAll('nav.menu > ul > li')
-for(let i=0; i<liTags.length; i++){
-    liTags[i].onmouseenter = function(x){
-        x.currentTarget.classList.add('active')
+    let specialTags = document.querySelectorAll('[data-x]')
+    console.log(specialTags)
+    console.log(window.scrollY)
+    let minIndex = 0
+    for(let i = 1; i<specialTags.length; i++){
+        if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)){
+        minIndex = i
+        }    
     }
-    liTags[i].onmouseleave = function(x){
-        x.currentTarget.classList.remove('active')
-    }   
+    let id = specialTags[minIndex].id
+    console.log(specialTags[minIndex])
+    let a = document.querySelector('a[href="#' + id + '"]')
+    console.log(a)
+    let li = a.parentNode//li等于a的父系标签
+    console.log(li)
+    let brothersAndMe = li.parentNode.children
+        for(let i=0; i<brothersAndMe.length; i++){
+            brothersAndMe[i].classList.remove('highlight')
+        }
+    li.classList.add('highlight')
+    
 }
+
+    let liTags = document.querySelectorAll('nav.menu > ul > li')
+    for(let i=0; i<liTags.length; i++){
+        liTags[i].onmouseenter = function(x){
+            x.currentTarget.classList.add('active')
+        }
+        liTags[i].onmouseleave = function(x){
+            x.currentTarget.classList.remove('active')
+        }   
+    }
+
 let aTags = document.querySelectorAll('nav.menu > ul >li > a')
 for(let i=0; i<aTags.length; i++){
     aTags[i].onclick = function(x){
@@ -60,5 +83,6 @@ for(let i=0; i<aTags.length; i++){
               window.scrollTo(0, coords.y)//coords.y 是函数算出来的
             })
             .start(); 
+        }
     }
-}
+

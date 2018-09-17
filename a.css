@@ -54,7 +54,8 @@ ul,ol{ list-style: none; }
     display: block;
     position: relative;
 }
-.topNavBar nav > ul > li.active > a::after {
+.topNavBar nav > ul > li.active > a::after,
+.topNavBar nav > ul > li.highlight > a::after {
     content: '';
     display: block;
     position: absolute;
