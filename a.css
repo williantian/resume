@@ -1,0 +1,320 @@
+body{ background: #efefef; margin: 0px; }
+a{ text-decoration: none; color: inherit; }
+*{ margin: 0px; padding: 0px; }
+h1,h2,h3,h4,h5,h6{ font-weight: normal; }
+hr{ border: none; height: 0px; border-top: 1px solid #dedede; }
+ul,ol{ list-style: none; }
+.clearfix::after{ content: ''; display: block; clear: both; }
+.topNavBar { padding: 20px 0px 20px 0px;
+   position: fixed; top: 0%; left: 0%; width: 100%; color: #b7b7b7;
+   transition: all 1s; }
+.topNavBar.sticky{
+    background: white; z-index: 1; box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+    padding: 10px 0px; color: #3d4451;
+}
+.topNavBar.sticky ul > li{
+    font-size: bold;
+}
+.topNavBar-innet{ padding: 0% 16px; }
+.topNavBar .logo { font-family: "Hiragino Kaku Gothic Std";
+    font-size: 22px; padding-top: 1px; }
+.topNavBar .logo .rs{ color: #e6686a; margin-left: 4px; }
+.topNavBar .logo .card{
+    color: #9a9da2;
+    margin-left: 4px;
+}
+.topNavBar nav {
+    font-size: 13px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    float: right;
+}
+.topNavBar nav a{
+    text-decoration: none;
+    font-weight: bold;
+}
+.topNavBar nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.topNavBar nav > ul > li{
+    float: left;
+    margin-left: 17px;
+    margin-right: 17px;
+    position: relative;
+}
+.topNavBar nav > ul > li > a {
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid transparent;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 12px;
+    color: inherit;
+    display: block;
+    position: relative;
+}
+.topNavBar nav > ul > li.active > a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #e06567;
+    height: 3px;
+    animation: menuSlide 0.8s;
+}
+@keyframes menuSlide{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+}
+.topNavBar .submenu{
+    display: none;
+    position: absolute;
+    background: white;
+    color: #3d4451;
+    right: 0;
+    top: 100%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+.topNavBar li.active> .submenu{
+    display: block;
+    animation: submenuSlide 1s;
+}
+@keyframes submenuSlide{
+    0%{
+        margin-right: 100%;
+    }
+    100%{
+        margin-right: 0;
+    }
+}
+.topNavBar .submenu > li{
+    padding: 5px 10px;
+    white-space: nowrap;
+}
+.topNavBar .logo .rs {
+    font-size: 24px;
+    font-family: "Arial Black";
+}
+.topNavBar .logo .card{
+    font-family: "Arial Black";
+}
+.banner{
+    height: 500px;
+    background-image: url(./background.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+.banner .mask{
+    height: 500px;
+    background-color:rgba(0,0,0,0.7);
+}
+.userCard{
+    margin-left: auto;
+    max-width: 800px;
+    margin-right: auto;
+    background-color: #fff; 
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.17);
+}
+.userCard .Welcome{
+    background: #e6686a;
+    color: white;
+    display: inline-block;
+    padding: 2px 18px;
+    line-height: 22px;
+    position: relative;
+    margin-bottom: 26px;
+}
+.userCard .Welcome .triangle{
+    display: block;
+    border: 10px solid transparent;
+    width: 0px;
+    border-left-color: #e6686a;
+    border-top-width: 0px;
+    position: absolute;
+    top: 100%;
+    left: 5px;
+}
+.userCard .picture{
+    float: left;
+    margin-right: 65px;
+}
+.userCard .text{
+    float: left;
+    width: 300px;
+}
+.userCard .text hr{
+    margin: 20px 0px;
+}
+.userCard .pictureAndText{
+    padding: 50px;
+}
+.userCard dl dt,
+.userCard dl dd{
+    float: left;
+    padding: 5px 0px;
+}
+.userCard dl dt{
+    width: 40%;
+    font-weight: bold;
+}
+.userCard dl dd{
+    width: 60%;
+    color: #9da8a7;
+}
+.userCard > footer.media{
+    background: #e6686a;
+    text-align: center;
+}
+.userCard > footer.media >a{
+    display: inline-block;
+    border-radius: 50%;
+    width: 40px;
+    padding: 5px 0;
+    margin: 5px 20px;
+}
+.userCard > footer.media >a:hover{
+    background: #cf5d5f;
+}
+.userCard svg{
+    fill: white;
+    width: 30px;
+    height: 30px;
+    vertical-align: top;
+}
+body > main{
+    margin-top: -200px;
+}
+body > main .downloadWrapper{
+    text-align: center;
+}
+body > main .downloadResume{
+    font-size: 14px;
+    padding: 16px 40px;
+    display: inline-block;
+    line-height: 14px;
+    border: 1px solid #cdcfd1;
+    border-radius: 4px;
+    margin: 30px 0px;
+    color: #3d4451;
+    font-weight: bold;
+    transition: box-shadow 0.3s;
+}
+body > main .downloadResume:hover{
+    box-shadow: 0px 6px 15px 0px rgba(0,0,0,0.2);
+}
+.selfIntroduction{
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: KaiTi;
+    line-height: 1.8;
+    font-size: 20px;
+    font-weight: bold;
+}
+section.skills,
+section.portfolio{
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+}
+section.skills > h2,
+section.portfolio > h2{
+    color: #3d4451;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 600;
+    text-align: center;
+}
+section.portfolio{
+    text-align: center;
+    margin-bottom: 100px;
+}
+section.portfolio > nav{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 30px;
+}
+section.portfolio > nav > ol > li{
+    float: left;
+    margin-left: 30px;
+    cursor: pointer;
+}
+section.portfolio > nav > ol > li:nth-child(1){
+    margin-left: 0;
+}
+section.portfolio > nav > ol{
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: top;
+}
+section.skills h3{
+    font-size: 14px;
+    line-height: 1.1;
+    padding-right: 48px;
+}
+section.skills > ol{
+    background: white;
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.17);
+    padding: 42px 40px 10px 40px;
+}
+section.skills > ol > li{
+    float: left;
+    width: 48%;
+}
+section.skills > ol > li:nth-child(even){
+    float: right;
+}
+section.skills .progressBar{
+    height: 5px;
+    background: #fae1e1;
+    border-radius: 2px;
+    margin: 4px 0 40px;
+}
+section.skills .progressBar .progress{
+    background: #e6686a;
+    width: 50%;
+    height: 100%;
+    border-radius: 2px;
+}
+section.portfolio > nav .bar{
+    height: 5px;
+    background: white;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    border-radius: 3px;
+}
+section.portfolio > nav .bar-inner{
+    height: 100%;
+    background: #e6686a;
+    width: 10%;
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+section.portfolio > nav .bar.state-1 .bar-inner{
+    margin-left: 0;
+    width: 36px;
+}
+section.portfolio > nav .bar.state-2 .bar-inner{
+    margin-left: 54px;
+    width: 50px;
+}
+section.portfolio > nav .bar.state-3 .bar-inner{
+    margin-left: 120px;
+    width: 94px;
+}
+section.portfolio .works{
+    position: relative;
+}
+section.portfolio .works > .big,
+section.portfolio .works > .small{
+    position: absolute;
+}
