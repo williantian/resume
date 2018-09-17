@@ -6,8 +6,18 @@ requestAnimationFrame(animate);//如何运行由上面的函数决定
 
 setTimeout(function(){
     siteWlecome.classList.remove('active')
-},1000)
+},100)
 
+let specialTags = document.querySelectorAll('[data-x]')
+    for(let i = 0; i<specialTags.length; i++){
+        specialTags[i].classList.add('offset')    
+    }
+
+//setTimeout(function(){
+//  yyy()
+//}, 2000)
+//可以加 不加也有效果
+yyy()
 window.onscroll = function(x){
     if(window.scrollY>0){
         topNavBar.classList.add('sticky')
@@ -15,27 +25,26 @@ window.onscroll = function(x){
     else{
         topNavBar.classList.remove('sticky')
     }
+    yyy()
+}
+function yyy(){
     let specialTags = document.querySelectorAll('[data-x]')
-    console.log(specialTags)
-    console.log(window.scrollY)
     let minIndex = 0
     for(let i = 1; i<specialTags.length; i++){
         if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)){
         minIndex = i
         }    
     }
+    //minIndex 就是离窗口最近的元素
+    specialTags[minIndex].classList.remove('offset')   
     let id = specialTags[minIndex].id
-    console.log(specialTags[minIndex])
     let a = document.querySelector('a[href="#' + id + '"]')
-    console.log(a)
     let li = a.parentNode//li等于a的父系标签
-    console.log(li)
     let brothersAndMe = li.parentNode.children
         for(let i=0; i<brothersAndMe.length; i++){
             brothersAndMe[i].classList.remove('highlight')
         }
     li.classList.add('highlight')
-    
 }
 
     let liTags = document.querySelectorAll('nav.menu > ul > li')

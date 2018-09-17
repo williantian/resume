@@ -5,6 +5,14 @@ h1,h2,h3,h4,h5,h6{ font-weight: normal; }
 hr{ border: none; height: 0px; border-top: 1px solid #dedede; }
 ul,ol{ list-style: none; }
 .clearfix::after{ content: ''; display: block; clear: both; }
+
+[data-x].offset{
+    transform: translateY(150px);
+}
+[data-x]{
+    transform: translateY(0);
+    transition: all 1s;
+}
 .topNavBar { padding: 20px 0px 20px 0px;
    position: fixed; top: 0%; left: 0%; width: 100%; color: #b7b7b7;
    transition: all 1s; }
