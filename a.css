@@ -287,12 +287,18 @@ section.skills .progressBar{
     background: #fae1e1;
     border-radius: 2px;
     margin: 4px 0 40px;
+    overflow: hidden;
 }
 section.skills .progressBar .progress{
     background: #e6686a;
     width: 50%;
     height: 100%;
     border-radius: 2px;
+    transform: translateX(0);
+    transition: all 1s;
+}
+section.skills.offset .progress{
+    transform: translate(-100%);
 }
 section.portfolio > nav .bar{
     height: 5px;
