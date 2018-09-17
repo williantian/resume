@@ -17,7 +17,7 @@ let specialTags = document.querySelectorAll('[data-x]')
 //  yyy()
 //}, 2000)
 //可以加 不加也有效果
-yyy()
+findClosest()
 window.onscroll = function(x){
     if(window.scrollY>0){
         topNavBar.classList.add('sticky')
@@ -25,9 +25,9 @@ window.onscroll = function(x){
     else{
         topNavBar.classList.remove('sticky')
     }
-    yyy()
+    findClosest()
 }
-function yyy(){
+function findClosest(){
     let specialTags = document.querySelectorAll('[data-x]')
     let minIndex = 0
     for(let i = 1; i<specialTags.length; i++){
