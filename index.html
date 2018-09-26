@@ -201,7 +201,23 @@
                     </div>
                 </div>
             </section>
+            <section class="message">
+               <h2>留言</h2>
+               <ol id="messageList">
+
+               </ol>
+               <form id="postMessageForm" style="width: 700px; margin: 50px auto;">
+                    <label>姓名</label>
+                    <input type="text" name="name"> 
+                    <label>内容</label>
+                    <input type="text" name="content">
+                    <input type="submit" value="提交">
+               </form>
+            </section>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
+            <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.10.0/dist/av-min.js"></script>
+            <script src="./message.js"></script>
+            
         </body>
             
 </html>
