@@ -1,6 +1,22 @@
 !function () {
     var view = document.querySelector('section.message')
 
+    var model = {
+        //获取数据
+      fetch: function(){
+        var query = new AV.Query('Message');
+        return query.find()//promise对象
+      },
+      save: function(name, content){
+          //创建数据
+        var Message = AV.Object.extend('Message');
+        var message = new Message();
+        return message.save({   ///prommise对象
+            'name': name,
+            'content': content
+        })
+      }
+    }
     var controller = {
         view: null,
         messageList: null,
@@ -19,9 +35,7 @@
             AV.init({ appId: APP_ID, appKey: APP_KEY })
         },
         loadMessages: function () {
-            var query = new AV.Query('Message');
-            query.find()
-                .then((messages) => {
+                model.fetch().then((messages) => {
                     let array = messages.map((item) => item.attributes)
                     array.forEach((item) => {
                         let li = document.createElement('li')
@@ -43,12 +57,7 @@
             let myForm = this.form
             let content = myForm.querySelector('input[name=content]').value
             let name = myForm.querySelector('input[name=name]').value
-            var Message = AV.Object.extend('Message');
-            var message = new Message();
-            message.save({
-                'name': name,
-                'content': content
-            }).then(function (object) {
+           model.save(name, content).then(function (object) {
                 let li = document.createElement('li')
                 li.innerText = `${object.attributes.name}: ${object.attributes.content}`//一起展示name和content
                 //attributes 曾出错写成attribute
