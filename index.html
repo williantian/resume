@@ -21,31 +21,31 @@
             <div id="topNavBar" class="topNavBar">
                 <div class="topNavBar-innet clearfix">
                         <a class="logo" href="#" alt="logo" style="float: left;">
-                                <span class="rs">RS</span><span class="card">card</span>
-                                </a>
-                                <nav class="menu">
-                                    <ul class="clearfix">
-                                            <li><a href="#siteAbout">关于</a></li>
-                                            <li><a href="#siteSkills">技能</a></li>
-                                            <li><a href="#siteWorks">作品</a>
-                                               <ul class="submenu">
-                                                   <li>作品1</li>
-                                                   <li>作品2</li>
-                                                   <li>作品3</li>
-                                               </ul>
-                                            </li>
-                                            <li><a href="#">博客</a>
-                                                <ul class="submenu">
-                                                        <li>博客1</li>
-                                                        <li>博客2</li>
-                                                        <li>博客3</li>
-                                                    </ul>
-                                            </li>
-                                            <li><a href="#">日历</a></li>
-                                            <li><a href="#">联系方式</a></li>
-                                            <li><a href="#">其他</a></li>
-                                    </ul>
-                                </nav>
+                            <span class="rs">RS</span><span class="card">card</span>
+                        </a>
+                        <nav class="menu">
+                            <ul class="clearfix">
+                                    <li><a href="#siteAbout">关于</a></li>
+                                    <li><a href="#siteSkills">技能</a></li>
+                                    <li><a href="#siteWorks">作品</a>
+                                        <ul class="submenu">
+                                            <li>作品1</li>
+                                            <li>作品2</li>
+                                            <li>作品3</li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">博客</a>
+                                        <ul class="submenu">
+                                                <li>博客1</li>
+                                                <li>博客2</li>
+                                                <li>博客3</li>
+                                            </ul>
+                                    </li>
+                                    <li><a href="#">日历</a></li>
+                                    <li><a href="#">联系方式</a></li>
+                                    <li><a href="#">其他</a></li>
+                            </ul>
+                        </nav>
                 </div>
             </div>
             <div class="banner">
@@ -178,17 +178,7 @@
                         <div class="bar-inner"></div>
                     </div>
                 </nav>
-                <script src="./main.js">
-                  portfolio1.onclick= function(){
-                      portfolioBar.className = 'bar state-1'
-                  }
-                  portfolio2.onclick= function(){
-                      portfolioBar.className = 'bar state-2'
-                  }    
-                  portfolio3.onclick= function(){
-                      portfolioBar.className = 'bar state-3'
-                  }                    
-                </script>
+                
                 <div class="works" style="height: 597px;">
                     <div class="big" style="top: 0; left: 0;">
                         <img src="./1.jpg" alt="作品一">
@@ -207,16 +197,29 @@
 
                </ol>
                <form id="postMessageForm" style="width: 700px; margin: 50px auto;">
-                    <label>姓名</label>
-                    <input type="text" name="name"> 
-                    <label>内容</label>
-                    <input type="text" name="content">
-                    <input type="submit" value="提交">
+                        <label>姓名
+                            <input type="text" name="name"> 
+                        </label>
+                        <label>内容
+                            <input type="text" name="content">
+                        </label>
+                    <input class="submit" type="submit" value="提交">
                </form>
             </section>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
             <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.10.0/dist/av-min.js"></script>
             <script src="./message.js"></script>
+            <script src="./main.js">
+                portfolio1.onclick= function(){
+                    portfolioBar.className = 'bar state-1'
+                }
+                portfolio2.onclick= function(){
+                    portfolioBar.className = 'bar state-2'
+                }    
+                portfolio3.onclick= function(){
+                    portfolioBar.className = 'bar state-3'
+                }                    
+            </script>
             
         </body>
             

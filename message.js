@@ -24,7 +24,6 @@
             this.view = view
             this.messageList = view.querySelector('#messageList')
             this.form = view.querySelector('form')
-            console.log(this.form)
             this.initAV()
             this.loadMessages()
             this.bindEvents()

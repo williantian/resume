@@ -5,6 +5,8 @@ h1,h2,h3,h4,h5,h6{ font-weight: normal; }
 hr{ border: none; height: 0px; border-top: 1px solid #dedede; }
 ul,ol{ list-style: none; }
 .clearfix::after{ content: ''; display: block; clear: both; }
+*{outline: none;}
+
 
 [data-x].offset{
     transform: translateY(150px);
@@ -14,7 +16,8 @@ ul,ol{ list-style: none; }
     transition: all 1s;
 }
 .topNavBar { padding: 20px 0px 20px 0px;
-   position: fixed; top: 0%; left: 0%; width: 100%; color: #b7b7b7;
+   position: fixed; /*一般使用 position: sticky 让导航栏浮动*/
+   top: 0%; left: 0%; width: 100%; color: #b7b7b7;
    transition: all 1s; }
 .topNavBar.sticky{
     background: white; z-index: 1; box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
@@ -343,4 +346,25 @@ section.message > ol{
 section.message > ol > li{
     padding: 16px 16px;
     border-bottom: 1px solid #ececec;
+}
+section.message input{
+    border: none;
+    line-height: 30px;
+    width: 600px; 
+}
+#postMessageForm{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    align-items: center;
+    position: relative;
+}
+section.message label{
+    margin: 10px 0;
+}
+section.message .submit{
+   position: absolute;
+   width: 50px;
+   right: 50px;
+   bottom: -30px;
 }
